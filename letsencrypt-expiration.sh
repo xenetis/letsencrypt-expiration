@@ -8,3 +8,6 @@ if [[ $(lsb_release -sc) = "jessie" || $(lsb_release -sc) = "stretch" ]]; then
   wget https://raw.githubusercontent.com/xenetis/letsencrypt-expiration/main/certificates/lets-encrypt-r3.crt -P /usr/local/share/ca-certificates/
   update-ca-certificates -f
 fi
+if [[ $(lsb_release -sc) = "buster" ]]; then
+  apt-get install ca-certificates -y
+fi
